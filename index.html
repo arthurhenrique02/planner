@@ -3,15 +3,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Icarus planner</title>
-    <script src="static/js/auth.js"></script>
-
+    
     <!-- BOOTSTRAP -->
     <link href="/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
-
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="static/css/styles.css">
+
 </head>
 <body>
+    <div class="alert d-none text-center" role="alert">
+        
+      </div>
+
     <main class="main-from-index">
         <div class="container-fluid">
             <!-- IMAGE COL -->
@@ -25,7 +30,7 @@
                 <div class="col-sm-12 col-md-8 col-lg-6 d-flex justify-content-center align-items-center">
                     <div class="forms-login-register col-sm-12 col-md-12 col-lg-9">
                         <!-- LOGIN FORM -->
-                        <form class="login-form">
+                        <form id="login_form">
                              <!-- get email and password -->
                             <div class="mt-2">
                             <div id="emailHelp" class="form-text fs-5 mb-2 main-from-index-text">Acesse sua conta:</div>
@@ -36,7 +41,7 @@
                           </form>
 
                         <!-- REGISTER FORM -->
-                        <form class="register-form">
+                        <form id="register-form">
                             <!-- get email and password -->
                            <div class="mt-2">
                            <div id="emailHelp" class="form-text fs-5 mb-2 main-from-index-text">Acesse sua conta:</div>
@@ -51,5 +56,9 @@
             </div>
         </div>
     </main>
+
+    <!-- SCRIPT -->
+    <script type="module" src="static/js/utils.js"></script>
+    <script type="module" src="static/js/auth.js"></script>
 </body>
 </html>
