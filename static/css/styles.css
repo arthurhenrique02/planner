@@ -1,0 +1,62 @@
+:root{
+    --default-color: #e2c89e
+}
+
+/* ============= */
+/* font config */
+@font-face {
+    font-family: 'Roboto';
+    src: url('/static/fonts/Roboto-Regular.ttf') format('truetype');
+    /* Add additional font formats if available */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ============= */
+/* default configs */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* ============= */
+/* html body */
+body {
+    background-color: var(--default-color);
+}
+
+/* ============= */
+/* INDEX.HTML MAIN`s */
+/* change the index.html main`s font and font color */
+.main-from-index {
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-from-index-text {
+    color: black;
+}
+
+/* ============= */
+/* main image (image on index.html)*/
+.main-image {
+    border: none;
+    background-color: white;
+    background-blend-mode: lighten;
+    box-shadow: 5px 5px 1px var(--default-color);
+    filter: brightness(93%);
+    opacity: 0.8;
+}
+
+/* ============= */
+/* BOOTSTRAP BUTTON */
+.btn-primary {
+    background-color: #418ce8;
+    border: none;
+    border-radius: 1.1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0080ff;
+    border: none;
+    border-radius: 1.1rem;
+}

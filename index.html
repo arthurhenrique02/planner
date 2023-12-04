@@ -8,15 +8,17 @@
     <!-- BOOTSTRAP -->
     <link href="/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="static/css/styles.css">
 </head>
 <body>
-    <main>
+    <main class="main-from-index">
         <div class="container-fluid">
             <!-- IMAGE COL -->
-            <div class="row justify-content-center" style="background-color: red;">
+            <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-8 col-lg-6 d-flex justify-content-center align-items-center">
                     <!-- MAIN IMAGE -->
-                    <img src="static/images/index_img.png" class="img-fluid rounded h-75 w-auto">
+                    <img src="static/images/index_img.png" class="main-image img-fluid rounded h-75 w-auto">
                 </div>
 
                 <!-- FORMS COL -->
@@ -26,10 +28,10 @@
                         <form class="login-form">
                              <!-- get email and password -->
                             <div class="mt-2">
-                            <div id="emailHelp" class="form-text fs-5 mb-2">Acesse sua conta:</div>
-                              <input type="email" class="form-control mb-2" id="emailLogin" placeholder="E-mail cadastrado">
-                              <input type="password" class="form-control mb-2" id="passwordLogin" placeholder="Senha">
-                              <button type="submit" class="btn btn-primary">Submit</button>
+                            <div id="emailHelp" class="form-text fs-5 mb-2 main-from-index-text">Acesse sua conta:</div>
+                              <input type="email" class="form-control mb-2 main-from-index-text" id="emailLogin" placeholder="E-mail cadastrado">
+                              <input type="password" class="form-control mb-2 main-from-index-text" id="passwordLogin" placeholder="Senha">
+                              <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                           </form>
 
@@ -37,11 +39,11 @@
                         <form class="register-form">
                             <!-- get email and password -->
                            <div class="mt-2">
-                           <div id="emailHelp" class="form-text fs-5 mb-2">Acesse sua conta:</div>
-                             <input type="email" class="form-control mb-2" id="nomeRegister" placeholder="Nome">
-                             <input type="email" class="form-control mb-2" id="emaiRegister" placeholder="E-mail">
-                             <input type="password" class="form-control mb-2" id="passwordRegister" placeholder="Senha">
-                             <button type="submit" class="btn btn-primary">Submit</button>
+                           <div id="emailHelp" class="form-text fs-5 mb-2 main-from-index-text">Acesse sua conta:</div>
+                             <input type="email" class="form-control mb-2 main-from-index-text" id="nomeRegister" placeholder="Nome">
+                             <input type="email" class="form-control mb-2 main-from-index-text" id="emaiRegister" placeholder="E-mail">
+                             <input type="password" class="form-control mb-2 main-from-index-text" id="passwordRegister" placeholder="Senha">
+                             <button type="submit" class="btn btn-primary mb-2">Enviar</button>
                            </div>
                          </form>
                     </div>
