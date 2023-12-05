@@ -1,5 +1,6 @@
 :root{
-    --default-color: #e2c89e
+    --default-color: #e2c89e;
+    --card-color:#feebbd;
 }
 
 /* ============= */
@@ -48,7 +49,7 @@ body {
 }
 
 /* ============= */
-/* BOOTSTRAP BUTTON */
+/* BOOTSTRAP */
 .btn-primary {
     background-color: #418ce8;
     border: none;
@@ -59,4 +60,11 @@ body {
     background-color: #0080ff;
     border: none;
     border-radius: 1.1rem;
+}
+
+.card {
+    background-color: var(--card-color);
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
