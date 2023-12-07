@@ -22,18 +22,15 @@ login_form.addEventListener(
         // check if email and password are correct
         for (let client of json_clients){
             console.log(client);
+            console.log(client.email);
+            console.log(email)
             if (client.email == email && client.password == password) {
                 // create session
-                window.sessionStorage.setItem("email", client.email);
-                window.sessionStorage.setItem("email", client.name);
-                window.sessionStorage.setItem("email", client.password);
-
+                localStorage.setItem("email", client.email);
+                localStorage.setItem("name", client.name);
+                localStorage.setItem("password", client.password);
+      
                 window.location.href = "http://127.0.0.1:5500/task_list.html";
-                window.onload = function(){
-                    document.sessionStorage.getItem("email").value;
-                    document.sessionStorage.getItem("name").value;
-                    document.sessionStorage.getItem("password").value;
-                }
                 return;
             }
         }
@@ -78,6 +75,10 @@ register_form.addEventListener(
         // insert into 'database'
         json_clients.push(new_client);
 
+
+        // save on local storage
+        localStorage.setItem("clients", JSON.stringify(json_clients));
+        
         // send alert
         show_alert("alert-success", "Registrado com sucesso");
-}) 
+})
