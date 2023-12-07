@@ -11,3 +11,10 @@ export function show_alert(alert_type, alert_message){
         document.querySelector(".alert").classList.add('d-none');
         }, 5000);
 }
+
+export function logout(){
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+    window.location.href = "http://localhost:5500/";
+}
