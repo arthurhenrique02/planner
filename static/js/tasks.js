@@ -51,12 +51,12 @@ sbmt_task.addEventListener("submit", function(form_instance){
         return;
     }
 
-    console.log('AAAAAAAAAAA',task);
     // format dates
     start_date = start_date.split("-").reverse().join("/");
     end_date = end_date.split("-").reverse().join("/");
     // create task object
     let task_object = {
+        "id": json_tasks.length + 1,
         "task": task,
         "start_date": `${start_date}`,
         "end_date": `${end_date}`,
@@ -69,16 +69,11 @@ sbmt_task.addEventListener("submit", function(form_instance){
     // add task to json_tasks
     json_tasks.push(task_object);
 
-    console.log(json_tasks);
-
     // send alert
     show_alert("alert-success", "Tarefa registrada com sucesso!");
 
     // update session storage
     localStorage.setItem("tasks", JSON.stringify(json_tasks));
-
-    console.log(localStorage.getItem("tasks"));
-    console.log("JSON_TASKS", json_tasks);
 
     update_tasks_table();
 });
@@ -128,10 +123,40 @@ function update_tasks_table(){
         status.innerText = "Em andamento";
 
         // add change button to change cell
-        change_btn.innerHTML = `<button type="button" class="btn">Alterar</button>`;
+        change_btn.innerHTML = `<button type="button" id="${userTasks[i-1]['id']}" class="btn">Alterar</button>`;
     }
 }
 
+// create status changer (change every 10 secs)
+setInterval(function(){
+    // get current time
+    let time = new Date();
+    // get table body
+    var table_body = document.getElementById("taskTable").children[1];
 
-function check_status(){
-}
+    // loop through table body
+    for (let i = 0; i < table_body.rows.length; i++){
+        // get task id
+        let task_id = table_body.rows[i].cells[5].children[0].id;
+
+        json_tasks.find(function(task){
+            if (task.id == task_id){
+                // get start date
+                let start_date = new Date(`${task.start_date.split("/").reverse().join("-")} ${task.start_hour}`);
+                // get end date
+                let end_date = new Date(`${task.end_date.split("/").reverse().join("-")} ${task.end_hour}`);
+
+                // // check if start date is before current time and end date is after current time
+                if (start_date > time && table_body.rows[i].cells[4].innerText != "Finalizada"){
+                    table_body.rows[i].cells[4].innerText = "Pendente";
+                }
+                else if (start_date <= time && end_date >= time && table_body.rows[i].cells[4].innerText != "Finalizada"){
+                    table_body.rows[i].cells[4].innerText = "Em andamento";
+                }
+                else if (end_date < time && table_body.rows[i].cells[4].innerText != "Finalizada"){
+                    table_body.rows[i].cells[4].innerText = "Em atraso";
+                }
+            }
+        });
+    }
+}, 10000);
